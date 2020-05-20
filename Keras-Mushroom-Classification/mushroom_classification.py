@@ -40,7 +40,7 @@ hist = model.fit(x_train, y_train,
                 validation_data = (x_val, y_val), 
                 callbacks = [early_stopping_monitor])
 
-model.save_weights("model.h5")
+model.save_weights("trained_model.h5")
 print("Model is saved")
 print("Test Score: {}".format(float(model.evaluate(x_test, y_test)[1])))
 
@@ -50,6 +50,7 @@ plt.title('Model loss')
 plt.ylabel('Loss')
 plt.xlabel('Epoch')
 plt.legend(['Train', 'Val'], loc='upper right')
+plt.savefig("Loss_History.png")
 plt.show()
 
 plt.plot(hist.history['acc'])
@@ -58,4 +59,5 @@ plt.title('Model accuracy')
 plt.ylabel('Accuracy')
 plt.xlabel('Epoch')
 plt.legend(['Train', 'Val'], loc = 'upper left')
+plt.savefig("Accuracy_History.png")
 plt.show()

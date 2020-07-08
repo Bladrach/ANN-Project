@@ -1,0 +1,9 @@
+using GPU
+batch size = 32
+max epoch number = 11
+80% train, 10% val, 10% test
+Adam optimizer
+learning rate 1e-3
+ReLU activation function
+MLP with 3 hidden layers 
+
